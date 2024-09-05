@@ -23,7 +23,7 @@
 // -lógica para jugar todo el juego.
 
 // 12.Crea una nueva función llamada playGame.
-// 13.Mueva sus playRoundvariables de función y puntuación para que se declaren dentro de la nueva playGamefunción
+// 13.Mueva sus playRound variables de función y puntuación para que se declaren dentro de la nueva playGamefunción
 // 14.Juega 5 rondas llamando playRound5 veces.
 // 15.Sugerencia : cuando asignas una llamada de función a una variable, el valor de retorno de esa función se asigna a la variable. Acceder a la variable posteriormente solo proporcionará el valor asignado; no recuperará la función. Debes recuperar las funciones de elección para obtener nuevas opciones para cada ronda.
 // 16.Si es necesario, vuelva a trabajar en sus funciones anteriores o cree más funciones auxiliares. En concreto, es posible que desee cambiar los valores de retorno por otros más útiles.
@@ -31,7 +31,7 @@
 
 // Codigo:
 
-// Elección de Pc (1 & 2)
+// Elección de la computadora
 function getComputerChoice() {
     let choicePc = Math.floor(Math.random() * 100);
 
@@ -43,12 +43,11 @@ function getComputerChoice() {
         return "tijera";
     }
 }
-console.log(`La pc eligió: ${getComputerChoice()}`);
 
 // Elección del humano
-let choiceHum = prompt("Elige: piedra / papel / tijera").toLowerCase();
-
 function getHumanChoice() {
+    let choiceHum = prompt("Elige: piedra / papel / tijera").toLowerCase();
+
     if (choiceHum === "piedra" || choiceHum === "papel" || choiceHum === "tijera") {
         return choiceHum;
     } else if (choiceHum === "") {
@@ -60,26 +59,58 @@ function getHumanChoice() {
     }
 }
 
-// Guarda el retorno de las funciones en variables
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-
-function playRound(choiceHum, choicePc) {
-    if (choiceHum === null) {
+// Función para jugar una ronda
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === null) {
         return "No se puede jugar sin una elección válida.";
     }
 
-    if (choiceHum === choicePc) {
+    if (humanChoice === computerChoice) {
         return "¡Empate!";
-    } else if (choiceHum === "piedra" && choicePc === "tijera") {
-        return "¡Ganaste :D! La piedra aplasta a la tijera.";
-    } else if (choiceHum === "papel" && choicePc === "piedra") {
+    } else if (humanChoice === "piedra" && computerChoice === "tijera") {
+        return "¡Ganaste! La piedra aplasta a la tijera.";
+    } else if (humanChoice === "papel" && computerChoice === "piedra") {
         return "¡Ganaste! El papel envuelve a la piedra.";
-    } else if (choiceHum === "tijera" && choicePc === "papel") {
+    } else if (humanChoice === "tijera" && computerChoice === "papel") {
         return "¡Ganaste! La tijera corta el papel.";
     } else {
-        return `Lo siento, perdiste :C. La ${choicePc} le gana a ${choiceHum}.`;
+        return `Lo siento, perdiste. La ${computerChoice} le gana a ${humanChoice}.`;
     }
 }
 
-console.log(playRound(humanChoice, computerChoice));
+// Función para jugar el juego completo
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let humanChoice = getHumanChoice();
+        
+        // Si la elección es inválida, vuelve a solicitarla
+        while (humanChoice === null) {
+            humanChoice = getHumanChoice();
+        }
+
+        let computerChoice = getComputerChoice();
+        console.log(`La PC eligió: ${computerChoice}`);
+
+        let result = playRound(humanChoice, computerChoice);
+        console.log(result);
+
+        // Actualizar puntuaciones
+        if (result.includes("Ganaste")) {
+            humanScore++;
+            console.log(`humano: ${humanScore}`);
+            console.log(`pc: ${computerScore}`);
+        } else if (result.includes("perdiste")) {
+            computerScore++;
+            console.log(`humano: ${humanScore}`);
+            console.log(`pc: ${computerScore}`);
+        }
+    }
+
+    console.log(`Puntuación final - Humano: ${humanScore}, Computadora: ${computerScore}`);
+}
+
+// Iniciar el juego
+playGame();
