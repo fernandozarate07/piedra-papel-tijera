@@ -1,0 +1,5 @@
+Crear 3 botones. Anadirle id a cada uno.
+crear 3 let (piedra, papel y tijera) para cada boton.
+El boton tiene que ejecutar la funcion playgame, pero ademas tiene que almazenar un valor que es human choise.
+
+
