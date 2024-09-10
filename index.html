@@ -6,6 +6,11 @@
     <title>Piedra Papel Tijera</title>
 </head>
 <body>
+    <div class="marcador">
+        <h2>Marcador:</h2>
+        <div class="marcador_left"></div>
+        <div class="marcador_right"></div>
+    </div>
     <div class="btnContainer">
         <h2>Elije una opcion</h2>
 
@@ -13,6 +18,16 @@
         <button data-choice="Papel">Papel</button>
         <button data-choice="tijera">Tijera</button>
 
+    </div>
+    <div class="result">
+        <div class="result_pc">
+            <h2>La pc eligio:</h2>
+            <p class="result_pc-p"></p>
+        </div>
+        <div class="result_player">
+            <h2>Elegiste:</h2>
+            <p class="result_player-p"></p>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
