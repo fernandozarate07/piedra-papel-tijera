@@ -41,26 +41,29 @@ function playRound() {
         humanScore++;
         let scoreHumanPara = document.createElement('p');
         scoreHumanPara.textContent = `Tu puntaje: ${humanScore}`;
-        scoreHumanContainer.innerHTML = ''; // Limpia el contenedor antes de agregar nuevo contenido
+        scoreHumanContainer.textContent = ''; 
         scoreHumanContainer.appendChild(scoreHumanPara);
 
         resultPara = document.createElement('p');
         resultPara.textContent = 'Ganaste';
+        resultContainer.textContent = ''; 
         resultContainer.appendChild(resultPara);
 
     } else if (humanChoice === computerChoice) {
         resultPara = document.createElement('p');
         resultPara.textContent = 'Empate';
+        resultContainer.textContent = ''; 
         resultContainer.appendChild(resultPara);
     } else {
         computerScore++;
         let scoreComputerPara = document.createElement('p');
         scoreComputerPara.textContent = `Puntaje de PC: ${computerScore}`;
-        scorePcContainer.innerHTML = ''; // Limpia el contenedor antes de agregar nuevo contenido
+        scorePcContainer.textContent = ''; 
         scorePcContainer.appendChild(scoreComputerPara);
 
         resultPara = document.createElement('p');
         resultPara.textContent = 'Perdiste';
+        resultContainer.textContent = ''; 
         resultContainer.appendChild(resultPara);
     }
 }
