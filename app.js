@@ -14,6 +14,8 @@ let computerScore = 0;
 
 // Inicializa el juego
 function initialize() {
+    humanScore = 0;
+    computerScore = 0;
     buttons.forEach(button => {
         button.addEventListener("click", event => {
             humanChoice = event.target.dataset.choice;
@@ -69,6 +71,9 @@ function playRound() {
         resultContainer.textContent = ''; 
         resultContainer.appendChild(resultPara);
     }
+    if(humanScore === 3 || computerScore == 3){
+        restartGame()
+    }
 }
 
 // Función principal del juego
@@ -76,6 +81,25 @@ function playGame() {
     getComputerChoice();
     playRound();
 }
+function restartGame(){
+    if(humanScore === 3){
+        alert('Ganaste perrito :D')
+        resultContainer.textContent='';
+        scorePcContainer.textContent='';
+        scoreHumanContainer.textContent='';
+        humanScore = 0;
+        computerScore=0
+    }
+    else if(computerScore === 3){
+        alert('Perdiste perrito :C')
+        resultContainer.textContent='';
+        scorePcContainer.textContent='';
+        scoreHumanContainer.textContent='';
+        humanScore = 0;
+        computerScore=0
+
+    }
+} 
 
 btnStart.addEventListener("click", event=>{
     startContainer.style.display = "none"
