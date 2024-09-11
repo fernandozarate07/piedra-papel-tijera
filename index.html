@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="startContainer">
-        <button id="btnStart">Comenzar</button>
-    </div>
-    <div class="scoreContainer">
-        <h2>Marcador:</h2>
-        <div id="score_pc"></div>
-        <div id="score_human"></div>
-    </div>
-    <div id="btnContainer">
-        <h2>Elige una opción</h2>
-        <button data-choice="piedra">Piedra</button>
-        <button data-choice="papel">Papel</button>
-        <button data-choice="tijera">Tijera</button>
-    </div>
-    <div id="resultContainer"></div>
+    <section id="windowStart">
+        <div id="startContainer">
+            <h2 id="tituleWstart">PIEDRA PAPEL O TIJERA</h2>
+            <p id="paraWstart">Piedra, Papel o Tijera es un juego de manos clásico que se juega entre dos personas. Cada jugador elige uno de tres objetos: piedra, papel o tijera. Las reglas son simples: la piedra aplasta la tijera, la tijera corta el papel y el papel cubre la piedra. El juego se utiliza a menudo para tomar decisiones de manera rápida y justa, y también es un juego popular para enseñar conceptos básicos de probabilidad y estrategia.</p>
+            <button id="btnStart">Comenzar</button>
+        </div>
+    </section>
+    <main>
+        <div class="scoreContainer">
+            <h2>MARCADOR</h2>
+            <div class="scoreContainerResult">
+                <div id="score_pc"></div>
+                <div id="score_human"></div>
+            </div>
+        </div>
+        <div id="resultContainer"></div>
+        <div id="btnContainer">
+            <h2>Elige una opción</h2>
+            <div>
+                <button data-choice="piedra">Piedra</button>
+                <button data-choice="papel">Papel</button>
+                <button data-choice="tijera">Tijera</button>
+            </div>
+        </div>    
+        <script src="app.js"></script>
+    </main>
 
-    <script src="app.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // Global variables
 const buttons = document.querySelectorAll('#btnContainer button');
 const btnStart = document.getElementById('btnStart');
-const startContainer = document.getElementById('startContainer');
+const windowStart = document.getElementById('windowStart');
 
 const scorePcContainer = document.getElementById('score_pc');
 const scoreHumanContainer = document.getElementById('score_human');
@@ -102,6 +102,6 @@ function restartGame(){
 } 
 
 btnStart.addEventListener("click", event=>{
-    startContainer.style.display = "none"
+    windowStart.style.display = "none"
     initialize();
 })
