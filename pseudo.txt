@@ -1,5 +1,20 @@
+Eleccion Humano: 
+
 Crear 3 botones. Anadirle id a cada uno.
 crear 3 let (piedra, papel y tijera) para cada boton.
 El boton tiene que ejecutar la funcion playgame, pero ademas tiene que almazenar un valor que es human choise.
 
+PlayRound:
 
+hacer una funcion PlayRound
+realizar comparaciones entre humanChoise y computerChoice.
+sumar en el score correspondiente 1
+imprimir el valor de humanscore y  computerscore en sus respectivos ('p')
+impirmir Ganaste o Perdiste en el ('p') correspondiente
+
+PlayGame:
+crear funcion que ejecute getHumanChoice, getcomputerChoise, y luego PlayRound
+crear un addeventlister en los buttones, y una vez idinticado el evento debera ejecutar playGame().
+
+Restart:
+Crear funcion que : restablezca los score y limpie los todos los pc. una vez uno de los score llega a 3. 
