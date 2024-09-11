@@ -1,3 +1,8 @@
+comienzo:
+
+hacer un div. que contenga un button para comenzar, una vez clickeado el evento se ejecutara initialize(); y se le colocara display off.
+
+
 Eleccion Humano: 
 
 Crear 3 botones. Anadirle id a cada uno.

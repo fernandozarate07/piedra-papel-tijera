@@ -1,5 +1,8 @@
 // Global variables
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('#btnContainer button');
+const btnStart = document.getElementById('btnStart');
+const startContainer = document.getElementById('startContainer');
+
 const scorePcContainer = document.getElementById('score_pc');
 const scoreHumanContainer = document.getElementById('score_human');
 const resultContainer = document.getElementById('resultContainer');
@@ -14,7 +17,7 @@ function initialize() {
     buttons.forEach(button => {
         button.addEventListener("click", event => {
             humanChoice = event.target.dataset.choice;
-            playGame(); // Llama a playGame cuando se haga clic en un botón
+            playGame(); //
         });
     });
 }
@@ -74,5 +77,7 @@ function playGame() {
     playRound();
 }
 
-// Inicializa el juego al cargar
-initialize();
+btnStart.addEventListener("click", event=>{
+    startContainer.style.display = "none"
+    initialize();
+})
